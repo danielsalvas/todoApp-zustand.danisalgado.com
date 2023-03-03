@@ -6,11 +6,9 @@ import './App.css'
 
 function App() {
 
-  const { modal, todos, completedTodos } = useStore(
+  const { modal } = useStore(
     (state) => ({
-      modal: state.modal,
-      todos: state.todos,
-      completedTodos: state.completedTodos,
+      modal: state.modal
     })
   );
 
