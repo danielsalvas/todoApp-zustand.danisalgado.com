@@ -95,12 +95,13 @@ body .modal {
 .form input[type="text"],
 .form input[type="date"]
 {
-    background-color: var(--light-gray);
+    background-color: #272727;
     border-radius: 1rem;
     padding: 1rem;
     border: none;
     flex: 1;
     font-size: 1rem;
+    color: white;
 }
 .form input[type="submit"] {
     background-color: #269755;
