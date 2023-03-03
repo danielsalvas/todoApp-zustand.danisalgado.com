@@ -138,7 +138,7 @@ body .modal {
 }
 
 .error {
-    background-color: var(--white);
+    background-color: #111827;
     border-left: 5px solid #b91c1c;
     color: white;
     padding: 0.2rem;
