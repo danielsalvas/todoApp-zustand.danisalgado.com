@@ -28,11 +28,17 @@ function App() {
   return (
     <div className={`${modal ? 'fix_form' : ''} container_app`}>
       <Title />
-      <button
-        onClick={handleNewTodo}
-      >
-        Add new Todo
-      </button>
+      <div className='add_todo'>
+        <h1 className='add_todo_title'>Let's <span className='text_green'>add</span> some tasks...</h1>
+        <div className='button_container'>
+          <button
+            className='add_todo_button'
+            onClick={handleNewTodo}
+          >
+            ADD NEW TASK
+          </button>
+        </div>
+      </div>
 
       {modal && <ModalForm />}
       

@@ -4,7 +4,7 @@ const Title = () => {
   return (
     <div>
       <h1 className={styles.title}>
-        Todo App
+        Todo <span className={styles.color_title}>App</span>
       </h1>
     </div>
   )
