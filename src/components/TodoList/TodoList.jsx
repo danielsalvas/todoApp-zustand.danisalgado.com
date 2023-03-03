@@ -15,14 +15,20 @@ const TodoList = () => {
   return (
     <div className={styles.container_todos}>
       <div className={styles.container_todos_section}>
-        { todos.map( (todo) => (
-          <Todo key={todo.id} todo={todo} />
-        ))}
+        <h1 className={styles.todo_title}>ACTIVE TASKS</h1>
+        <div className={styles.todos_direction}>        
+          { todos.map( (todo) => (
+            <Todo key={todo.id} todo={todo} />
+          ))}
+        </div>
       </div>
       <div className={styles.container_todos_section}>
-        { completedTodos.map( (todo) => (
-          <TodoCompleted key={todo.id} todo={todo} />
-        ))}
+        <h1 className={styles.todo_title}>COMPLETED TASKS</h1>
+        <div className={styles.todos_direction}>
+          { completedTodos.map( (todo) => (
+            <TodoCompleted key={todo.id} todo={todo} />
+          ))}
+        </div>
       </div>
     </div>
   )

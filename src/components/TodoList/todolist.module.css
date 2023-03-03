@@ -2,6 +2,12 @@
     display: flex;
 }
 
+.todo_title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
 @media screen and (max-width: 768px) {
     .container_todos{
         display: block;
@@ -12,13 +18,22 @@
         margin: 0px !important;
         margin-top: 15px !important;
     }
+    .todo_title {
+        font-size: 25px;
+        font-weight: bold;
+        margin-bottom: 30px;
+    }
 }
 
-.container_todos_section {
+.todos_direction {
     display: flex;
     flex-direction: column;
     border-radius: 0.75rem;
     overflow: hidden;
+    width: 100%; 
+}
+
+.container_todos_section {
     width: 50%;
     margin: 10px;
 }
