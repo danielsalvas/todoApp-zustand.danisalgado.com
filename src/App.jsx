@@ -1,25 +1,41 @@
 import { useEffect, useState } from 'react'
 import Title from './components/Title';
-import ModalForm from './components/ModalForm';
+import ModalForm from './components/ModalForm/ModalForm';
 import TodoList from './components/TodoList';
 import { useStore } from './stores';
 
 function App() {
 
-  const handleNewTodo = () => {
+  const { modal } = useStore(
+    (state) => ({
+      modal: state.modal
+    })
+  );
 
+  const { setModal, setAnimationModal } = useStore();
+
+  const handleNewTodo = () => {
+    setModal(true)
+
+    setTimeout(() => {
+      setAnimationModal(true)
+    }, 500);
+
+    setAnimationModal(false)
   }
 
   return (
-    <div className="bg-gray-900 min-h-screen h-full font-inter text-gray-100 flex items-center justify-center py-20 px-5">
-      <div className='container flex flex-col max-w-xl'>
+    <div className="">
+      <div className=''>
         <Title />
         <button
           onClick={handleNewTodo}
         >
           Add new Todo
         </button>
-        <ModalForm />
+
+        {modal && <ModalForm />}
+        
         <TodoList />
       </div>
     </div>

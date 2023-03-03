@@ -45,6 +45,10 @@ export const useStore = create((set, get) => ({
     }
   ],
   completedTodos: [],
+  modal: false,
+  animationModal: false,
+  setModal: (newModal) => set({ modal: newModal }),
+  setAnimationModal: (newAnimationModal) => set({ animationModal: newAnimationModal }),
   setTodos: (newTodo) => set({ todos: newTodo }),
   setCompletedTodos: (newCompletedTodos) => set({ completedTodos: newCompletedTodos }),
   addTodo: (data) => {
