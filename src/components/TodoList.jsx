@@ -11,8 +11,6 @@ const TodoList = () => {
     })
   );
 
-  console.log(completedTodos);
-
   return (
     <div>
       <div className='flex flex-col mt-7 rounded-xl overflow-hidden shadow-2xl'>
