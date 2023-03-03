@@ -5,6 +5,17 @@ const Todo = ( { todo }) => {
   const { handleSetCompleted, handleDelete } = useStore();
   const { id, data } = todo;
 
+  const formatDate = (date) => {
+
+    let newDate = new Date(date);
+
+    const day = newDate.getDate().toString().padStart(2, "0");
+    const month = (newDate.getMonth() + 1).toString().padStart(2, "0");
+    const year = newDate.getFullYear();
+
+    return `${day}/${month}/${year}`;
+  }
+
   return (
     <div className="flex items-center justify-between p-4 bg-gray-700 border-solid border-gary-600">
       <div className="flex items-center">
@@ -17,7 +28,7 @@ const Todo = ( { todo }) => {
             {data.description}
           </p>
           <p className='pl-3'>
-            {data.date}
+            {formatDate(data.date)}
           </p>
         </div>
       </div>

@@ -9,7 +9,7 @@ export const useStore = create((set, get) => ({
         title: 'Navbar Design',
         description: 'We have to fix the design',
         assigned: 'David Alejandro',
-        date: '10/03/2023'
+        date: '03/30/2023'
       },
       completed: false,
     },
@@ -19,7 +19,7 @@ export const useStore = create((set, get) => ({
         title: 'Responsive Mobile',
         description: 'The client shows us a bug in mobile',
         assigned: 'Daniel Salgadp',
-        date: '20/03/2023'
+        date: '03/25/2023'
       },
       completed: false,
     },
@@ -29,7 +29,7 @@ export const useStore = create((set, get) => ({
         title: 'Product Page',
         description: 'Update de description design in mobile',
         assigned: 'Marcela Alejandra',
-        date: '25/03/2023'
+        date: '03/20/2023'
       },
       completed: false,
     },
@@ -39,7 +39,7 @@ export const useStore = create((set, get) => ({
         title: 'Figma Design',
         description: 'Figma design needs to be fix ASAP',
         assigned: 'Andrea Castillo',
-        date: '25/03/2023'
+        date: '03/15/2023'
       },
       completed: false,
     }

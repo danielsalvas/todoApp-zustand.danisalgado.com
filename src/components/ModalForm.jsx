@@ -1,7 +1,7 @@
 import { useStore } from '../stores'
 import { useForm } from 'react-hook-form'
 
-const Form = () => {
+const ModalForm = () => {
 
   const {
     register,
@@ -88,6 +88,24 @@ const Form = () => {
                 </span>  
               }
 
+              {/* DUE DATE */}
+
+              <p >DUE DATE *</p>
+              <input
+                type="date"
+                placeholder="DUE DATE"
+                {...register("date", {
+                  required: true,
+                  maxLength: 200
+                })}
+              />
+
+              {errors.date && 
+                <span className='error'>
+                  {errors.date.type === 'required' && 'This field is required'}
+                </span>  
+              }
+
               {/* Submit  */}
 
               <div>
@@ -102,4 +120,4 @@ const Form = () => {
   )
 }
 
-export default Form
+export default ModalForm
