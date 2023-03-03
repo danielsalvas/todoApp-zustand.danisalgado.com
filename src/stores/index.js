@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import Swal from "sweetalert2";
 
 export const useStore = create((set, get) => ({
   todos: [
@@ -105,21 +106,47 @@ export const useStore = create((set, get) => ({
   handleDelete: (id) => {
 
     const todos = get().todos
-    const result = confirm('Do you want to delete the task?') 
-
-    if (result) {
-      const updatedList = todos.filter( todo => todo.id !== id)
-      get().setTodos(updatedList)
-    }  
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        )
+        const updatedList = todos.filter( todo => todo.id !== id)
+        get().setTodos(updatedList)
+      }
+    }) 
   },
   handleDeleteCompleted: (id) => {
 
     const todos = get().completedTodos
-    const result = confirm('Do you want to delete the task?') 
-
-    if (result) {
-      const updatedList = todos.filter( todo => todo.id !== id)
-      get().setCompletedTodos(updatedList)
-    }
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        )
+        const updatedList = todos.filter( todo => todo.id !== id)
+        get().setCompletedTodos(updatedList)
+      }
+    }) 
   }
 }));
