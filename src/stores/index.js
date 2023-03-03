@@ -18,7 +18,7 @@ export const useStore = create((set, get) => ({
       data: {
         title: 'Responsive Mobile',
         description: 'The client shows us a bug in mobile',
-        assigned: 'Daniel Salgadp',
+        assigned: 'Daniel Salgado',
         date: '03/25/2023'
       },
       completed: false,
@@ -66,6 +66,16 @@ export const useStore = create((set, get) => ({
       todoList.push(newTodo)
   
       get().setTodos(todoList);
+  },
+  formatDate : (date) => {
+
+    let newDate = new Date(date);
+
+    const day = newDate.getDate().toString().padStart(2, "0");
+    const month = (newDate.getMonth() + 1).toString().padStart(2, "0");
+    const year = newDate.getFullYear();
+
+    return `${day}/${month}/${year}`
   },
   handleSetCompleted: (id) => {
 

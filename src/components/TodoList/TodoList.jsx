@@ -1,6 +1,7 @@
-import Todo from "./Todo";
-import TodoCompleted from "./TodoCompleted";
-import { useStore } from "../stores";
+import Todo from "../Todo/Todo";
+import TodoCompleted from "../TodoCompleted/TodoCompleted";
+import { useStore } from "../../stores";
+import styles from './todolist.module.css'
 
 const TodoList = () => {
 
@@ -12,13 +13,13 @@ const TodoList = () => {
   );
 
   return (
-    <div>
-      <div className='flex flex-col mt-7 rounded-xl overflow-hidden shadow-2xl'>
+    <div className={styles.container_todos}>
+      <div className={styles.container_todos_section}>
         { todos.map( (todo) => (
           <Todo key={todo.id} todo={todo} />
         ))}
       </div>
-      <div className='flex flex-col mt-7 rounded-xl overflow-hidden shadow-2xl'>
+      <div className={styles.container_todos_section}>
         { completedTodos.map( (todo) => (
           <TodoCompleted key={todo.id} todo={todo} />
         ))}

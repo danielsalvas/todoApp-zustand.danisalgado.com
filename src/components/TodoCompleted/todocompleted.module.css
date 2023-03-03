@@ -1,0 +1,62 @@
+.container_todo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+    border-style: solid;
+    --tw-border-opacity: 1;
+    border-color: rgb(75 85 99 / var(--tw-border-opacity));
+    border-bottom: 2px solid #fff;  
+}
+
+.checkbox{
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.container_todo_center{
+    display: flex;
+    align-items: center;
+}
+
+.trash_deleted{
+    height: 1.25rem;
+    width: 1.25rem;
+    cursor: pointer;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
+.column_data{
+    display: flex;
+    flex-direction: column;
+}
+
+.title_data {
+    padding-left: 0.75rem;
+    font-weight: bold;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+
+.padding_data_section {
+    padding-left: 0.75rem;
+    padding-top: 0.75rem;
+} 
+
+.padding_data_completed {
+    padding-left: 0.75rem;
+    text-decoration-line: line-through;
+}
+
+.padding_data {
+    padding-left: 0.75rem;
+}
+
+
+ 

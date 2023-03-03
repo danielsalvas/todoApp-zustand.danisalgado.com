@@ -1,9 +1,9 @@
-import React from 'react'
+import styles from './title.module.css'
 
 const Title = () => {
   return (
     <div>
-      <h1 className='text-5xl text-center font-anton font-bold tracking-widest'>
+      <h1 className={styles.title}>
         Todo App
       </h1>
     </div>

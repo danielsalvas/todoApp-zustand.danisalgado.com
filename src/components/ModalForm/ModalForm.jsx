@@ -55,7 +55,7 @@ const ModalForm = () => {
           <p >TITLE *</p>
           <input
             type="text"
-            placeholder="title"
+            placeholder="Title"
             {...register("title", {
               required: true,
               maxLength: 80

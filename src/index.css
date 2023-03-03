@@ -11,10 +11,19 @@
     --black: #000;
 }
 
+html {
+    background-color: #111827 !important;
+}
+
 body {
     font-size: 1rem;
     font-family: "Lato", sans-serif;
-    background-color: var(--light-gray);
+    color: white;
+}
+
+.fix_form{
+    overflow: hidden;
+    height: 100vh;
 }
 
 
