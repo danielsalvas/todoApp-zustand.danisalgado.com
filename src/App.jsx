@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import Title from './components/Title/Title';
 import ModalForm from './components/ModalForm/ModalForm';
 import TodoList from './components/TodoList/TodoList';
