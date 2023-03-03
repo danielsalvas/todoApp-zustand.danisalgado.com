@@ -47,6 +47,7 @@ export const useStore = create((set, get) => ({
   handleSetCompleted: (id) => {
 
     const todos = get().todos
+    const completed = get().completedTodos
     const updatedList = todos.map( todo => {
       if (todo.id === id) {
         return { ...todo, completed: !todo.completed}
@@ -56,15 +57,43 @@ export const useStore = create((set, get) => ({
     })
 
     const activeTodos = updatedList.filter(todo => todo.completed === false)
-    const completedTodos = updatedList.filter(todo => todo.completed === true)
+    const filteredTodos = updatedList.filter(todo => todo.completed === true)
+
+    const completedTodos = completed.concat(filteredTodos)
 
     get().setTodos(activeTodos)
     get().setCompletedTodos(completedTodos)
+  },
+  handleSetUncompleted: (id) => {
+
+    const todos = get().todos
+    const completed = get().completedTodos
+    const updatedList = completed.map( todo => {
+      if (todo.id === id) {
+        return { ...todo, completed: !todo.completed}
+      }
+
+      return todo;
+    })
+
+    const newTodos = updatedList.filter(todo => todo.completed === false)
+    const filteredTodos = updatedList.filter(todo => todo.completed === true)
+
+    const activeTodos = todos.concat(newTodos)
+
+    get().setTodos(activeTodos)
+    get().setCompletedTodos(filteredTodos)
   },
   handleDelete: (id) => {
 
     const todos = get().todos
     const updatedList = todos.filter( todo => todo.id !== id)
     get().setTodos(updatedList)
+  },
+  handleDeleteCompleted: (id) => {
+
+    const todos = get().completedTodos
+    const updatedList = todos.filter( todo => todo.id !== id)
+    get().setCompletedTodos(updatedList)
   }
 }));
